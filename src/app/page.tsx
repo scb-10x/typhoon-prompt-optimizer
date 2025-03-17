@@ -1,103 +1,112 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import PromptGenerator from '@/components/PromptGenerator';
+import PromptImprover from '@/components/PromptImprover';
+import { FloatingFeature } from '@/components/floating-feature';
+import { Zap, Lightbulb, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="relative min-h-screen overflow-hidden bg-gradient-subtle">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-noise"></div>
+      
+      {/* Background decorations */}
+      <div className="absolute top-40 -left-32 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/20 rounded-full filter blur-3xl opacity-20"></div>
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-300/10 rounded-full filter blur-3xl opacity-10"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-purple-300/10 rounded-full filter blur-3xl opacity-10"></div>
+      
+      {/* Header */}
+      <header className="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 py-4 border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2">
+            <div className="relative w-8 h-8">
+              <Image 
+                src="/images/logo.svg" 
+                alt="Typhoon Logo" 
+                width={32} 
+                height={32} 
+                className="object-contain"
+              />
+            </div>
+            <span className="font-bold text-xl text-gradient">Typhoon</span>
+            <span className="font-bold text-xl text-gray-800">{t('appName')}</span>
+            <span className="ml-2 text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full hidden sm:inline-block">
+              {t('beta')}
+            </span>
+          </div>
+          
+          <LanguageSwitcher />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </header>
+      
+      <div className="container relative mx-auto pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <div className="inline-block mb-3">
+            <span className="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              <span className="flex items-center gap-1.5">
+                <Zap className="h-3.5 w-3.5" />
+                {t('poweredBy')}
+              </span>
+            </span>
+          </div>
+          
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl mb-6">
+            <span className="text-gradient">
+              {t('title')}
+            </span>
+          </h1>
+          
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t('subtitle')}
+          </p>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Floating feature card */}
+          <FloatingFeature />
+          
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl transform rotate-1 scale-[1.01]"></div>
+          <div className="card-stripe relative p-8 sm:p-10">
+            <Tabs defaultValue="generate" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-10 p-1 gap-1">
+                <TabsTrigger value="generate" className="text-large py-3 group">
+                  <span className="flex items-center gap-2">
+                    <Lightbulb className="h-4 w-4 group-data-[state=active]:text-primary" />
+                    {t('generatePrompt')}
+                  </span>
+                </TabsTrigger>
+                <TabsTrigger value="improve" className="text-large py-3 group">
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 group-data-[state=active]:text-primary" />
+                    {t('improvePrompt')}
+                  </span>
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="generate" className="pt-2">
+                <PromptGenerator />
+              </TabsContent>
+              <TabsContent value="improve" className="pt-2">
+                <PromptImprover />
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div>
+
+        <div className="mt-24 text-center space-y-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} {t('buildWith')} <a href="http://opentyphoon.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-gradient hover:underline">Typhoon</a>. {t('allRightsReserved')}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

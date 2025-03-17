@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Typhoon Prompt Optimizer
+
+A modern web application for optimizing prompts for Large Language Models (LLMs). This tool helps you generate effective prompts from task descriptions and improve existing prompts for better AI interactions.
+
+## Features
+
+- **Generate Prompts**: Convert task descriptions into optimized prompts for LLMs
+- **Improve Prompts**: Enhance existing prompts for better results
+- **Modern UI**: Clean, responsive interface with dark mode support
+- **Powered by AI**: Uses OpenAI's GPT-4 to generate and improve prompts
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18.x or later
+- npm or yarn
+- OpenAI API key
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/typhoon-prompt-optimizer.git
+   cd typhoon-prompt-optimizer
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## Learn More
+3. Create a `.env.local` file in the root directory and add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+### Generating a Prompt
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Navigate to the "Generate Prompt" tab
+2. Enter a detailed task description in the text area
+3. Click the "Generate Prompt" button
+4. Copy the generated prompt using the "Copy" button
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Improving an Existing Prompt
+
+1. Navigate to the "Improve Prompt" tab
+2. Paste your existing prompt in the text area
+3. Click the "Improve Prompt" button
+4. Copy the improved prompt using the "Copy" button
+
+## Technologies Used
+
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- OpenAI API
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- OpenAI for providing the API
+- Vercel for hosting
+- Next.js team for the amazing framework
