@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import PromptGenerator from '@/components/PromptGenerator';
 import PromptImprover from '@/components/PromptImprover';

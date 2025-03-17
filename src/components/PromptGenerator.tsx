@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 import { Sparkles, Copy, ArrowRight, CheckCircle2, Zap } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 

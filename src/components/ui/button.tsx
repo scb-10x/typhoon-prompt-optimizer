@@ -45,11 +45,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          showShine && "overflow-hidden"
+        )}
         ref={ref}
         {...props}
       >
         {props.children}
+        {showShine && (
+          <span className="absolute inset-0 w-full h-full shine-effect"></span>
+        )}
       </Comp>
     );
   }
