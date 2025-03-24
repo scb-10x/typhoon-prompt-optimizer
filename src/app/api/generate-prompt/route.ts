@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { extractResultFromThinking } from '@/lib/utils';
+import { OPENAI_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
 
 // Initialize OpenAI client with Typhoon API endpoint
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://api.opentyphoon.ai/v1', // Typhoon API endpoint
+  apiKey: OPENAI_API_KEY,
+  baseURL: TYPHOON_BASE_URL, // Typhoon API endpoint
 });
 
 export async function POST(request: Request) {
@@ -19,9 +20,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Call Typhoon API to generate the prompt
     const response = await openai.chat.completions.create({
-      model: 'typhoon-v2-r1-70b-preview', // Using Typhoon model
+      model: TYPHOON_MODEL,
       messages: [
         {
           role: 'user',
@@ -54,6 +54,7 @@ Now, based on the task description provided, generate an effective prompt for a 
         }
       ],
       temperature: 0.6,
+      max_tokens: 2048,
     });
 
     let generatedPrompt = response.choices[0]?.message?.content || '';

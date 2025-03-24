@@ -37,8 +37,8 @@ export const translations = {
     enhancedWithAI: "Enhanced with AI",
     
     // Footer
-    buildWith: "Build with",
-    allRightsReserved: "All rights reserved.",
+    builtWith: "Built with",
+    allRightsReserved: "",
     
     // Language Switcher
     languageSwitcher: "Language",
@@ -79,8 +79,8 @@ export const translations = {
     enhancedWithAI: "ปรับปรุงด้วย AI",
     
     // Footer
-    buildWith: "สร้างด้วย",
-    allRightsReserved: "สงวนลิขสิทธิ์",
+    builtWith: "สร้างด้วย",
+    allRightsReserved: "",
     
     // Language Switcher
     languageSwitcher: "ภาษา",

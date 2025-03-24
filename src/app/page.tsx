@@ -103,7 +103,7 @@ export default function Home() {
 
         <div className="mt-24 text-center space-y-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {t('buildWith')} <a href="http://opentyphoon.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-gradient hover:underline">Typhoon</a>. {t('allRightsReserved')}
+            © {new Date().getFullYear()} {t('builtWith')} <a href="http://opentyphoon.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-gradient hover:underline">Typhoon</a>. {t('allRightsReserved')}
           </p>
         </div>
       </div>
