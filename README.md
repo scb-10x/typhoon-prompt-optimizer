@@ -7,7 +7,7 @@ A modern web application for optimizing prompts for Large Language Models (LLMs)
 - **Generate Prompts**: Convert task descriptions into optimized prompts for LLMs
 - **Improve Prompts**: Enhance existing prompts for better results
 - **Modern UI**: Clean, responsive interface with dark mode support
-- **Powered by AI**: Uses OpenAI's GPT-4 to generate and improve prompts
+- **Powered by AI**: Uses Typhoon Reasoning Model to generate and improve prompts
 
 ## Getting Started
 
@@ -15,13 +15,13 @@ A modern web application for optimizing prompts for Large Language Models (LLMs)
 
 - Node.js 18.x or later
 - npm or yarn
-- OpenAI API key
+- Typhoon API key
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/typhoon-prompt-optimizer.git
+   git clone https://github.com/scb-10x/typhoon-prompt-optimizer.git
    cd typhoon-prompt-optimizer
    ```
 
@@ -34,7 +34,7 @@ A modern web application for optimizing prompts for Large Language Models (LLMs)
 
 3. Create a `.env.local` file in the root directory and add your OpenAI API key:
    ```
-   OPENAI_API_KEY=your_openai_api_key_here
+   TYPHOON_API_KEY=your_openai_api_key_here
    ```
 
 4. Start the development server:
@@ -64,12 +64,12 @@ A modern web application for optimizing prompts for Large Language Models (LLMs)
 
 ## Technologies Used
 
-- Next.js 14
+- Next.js 15
 - React
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- OpenAI API
+- Typhoon API
 
 ## License
 
@@ -77,6 +77,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- OpenAI for providing the API
+- Typhoon for providing the API
 - Vercel for hosting
 - Next.js team for the amazing framework

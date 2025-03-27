@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { extractResultFromThinking } from '@/lib/utils';
-import { OPENAI_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
+import { TYPHOON_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
 
 // Initialize OpenAI client with Typhoon API endpoint
 const openai = new OpenAI({
-  apiKey: OPENAI_API_KEY,
+  apiKey: TYPHOON_API_KEY,
   baseURL: TYPHOON_BASE_URL, // Typhoon API endpoint
 });
 

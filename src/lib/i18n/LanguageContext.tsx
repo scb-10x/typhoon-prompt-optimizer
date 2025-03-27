@@ -3,9 +3,11 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Language, translations } from './translations';
 
+type TranslationParams = Record<string, string>;
+
 type LanguageContextType = {
   language: Language;
-  t: (key: keyof typeof translations.en) => string;
+  t: (key: keyof typeof translations.en, params?: TranslationParams) => string;
   changeLanguage: (lang: Language) => void;
 };
 
@@ -42,9 +44,18 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Translation function
-  const t = (key: keyof typeof translations.en): string => {
+  const t = (key: keyof typeof translations.en, params?: TranslationParams): string => {
     // Type assertion here since we know the key exists in both languages
-    return translations[language][key] as string;
+    let text = translations[language][key] as string;
+    
+    // Replace parameters if provided
+    if (params) {
+      Object.entries(params).forEach(([paramKey, paramValue]) => {
+        text = text.replace(`{{${paramKey}}}`, paramValue);
+      });
+    }
+    
+    return text;
   };
 
   return (

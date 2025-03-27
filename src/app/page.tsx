@@ -4,6 +4,7 @@ import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import PromptGenerator from '@/components/PromptGenerator';
 import PromptImprover from '@/components/PromptImprover';
+import PromptVisualizer from '@/components/PromptVisualizer';
 import { FloatingFeature } from '@/components/floating-feature';
 import { Zap, Lightbulb, Sparkles } from 'lucide-react';
 import Image from 'next/image';
@@ -99,6 +100,11 @@ export default function Home() {
               </TabsContent>
             </Tabs>
           </div>
+        </div>
+
+        {/* Visualization Section */}
+        <div className="relative max-w-4xl mx-auto mt-20">
+          <PromptVisualizer />
         </div>
 
         <div className="mt-24 text-center space-y-4">
