@@ -6,6 +6,10 @@ export const translations = {
     appName: "Prompt Optimizer",
     beta: "beta",
     
+    // Navigation
+    home: "Home",
+    guidelines: "Guidelines",
+    
     // Main Section
     poweredBy: "Typhoon-Powered Tool",
     title: "Optimize Your Prompts",
@@ -107,6 +111,10 @@ export const translations = {
     // Header
     appName: "Prompt Optimizer",
     beta: "beta",
+    
+    // Navigation
+    home: "หน้าหลัก",
+    guidelines: "คู่มือการใช้งาน",
     
     // Main Section
     poweredBy: "ขับเคลื่อนด้วย Typhoon",

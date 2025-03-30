@@ -7,8 +7,6 @@ import PromptImprover from '@/components/PromptImprover';
 import PromptVisualizer from '@/components/PromptVisualizer';
 import { FloatingFeature } from '@/components/floating-feature';
 import { Zap, Lightbulb, Sparkles } from 'lucide-react';
-import Image from 'next/image';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Home() {
@@ -25,31 +23,7 @@ export default function Home() {
       <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-300/10 rounded-full filter blur-3xl opacity-10"></div>
       <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-purple-300/10 rounded-full filter blur-3xl opacity-10"></div>
       
-      {/* Header */}
-      <header className="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 py-4 border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            <div className="relative w-8 h-8">
-              <Image 
-                src="/images/logo.svg" 
-                alt="Typhoon Logo" 
-                width={32} 
-                height={32} 
-                className="object-contain"
-              />
-            </div>
-            <span className="font-bold text-xl text-gradient">Typhoon</span>
-            <span className="font-bold text-xl text-gray-800">{t('appName')}</span>
-            <span className="ml-2 text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full hidden sm:inline-block">
-              {t('beta')}
-            </span>
-          </div>
-          
-          <LanguageSwitcher />
-        </div>
-      </header>
-      
-      <div className="container relative mx-auto pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="container relative mx-auto pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-block mb-3">
             <span className="inline-block py-1 px-3 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
