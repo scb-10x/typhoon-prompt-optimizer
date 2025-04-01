@@ -60,6 +60,10 @@ export default function PromptVisualizer() {
                 <h3 className="text-xl font-semibold">{t('improvePromptAlgorithm')}</h3>
               </div>
 
+              <div className="text-gray-600 mb-4">
+                <p>Typhoon's prompt improvement process analyzes your existing prompts and enhances them for better AI responses. This demonstrates the advanced natural language understanding capabilities that Typhoon offers to developers and users.</p>
+              </div>
+
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-1 space-y-4">
                   <div className="rounded-xl border bg-card p-4 shadow-sm">
@@ -143,6 +147,10 @@ export default function PromptVisualizer() {
                   <Lightbulb size={20} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold">{t('generatePromptAlgorithm')}</h3>
+              </div>
+
+              <div className="text-gray-600 mb-4">
+                <p>Typhoon's prompt generation algorithm creates effective prompts from simple task descriptions. This demonstrates how Typhoon's capabilities can be leveraged to enhance productivity in AI workflows and create better results from large language models.</p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
