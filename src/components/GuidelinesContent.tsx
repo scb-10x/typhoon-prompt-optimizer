@@ -48,7 +48,7 @@ const components: any = {
       const hasLongLines = lines.some((line) => line.length > 80);
 
       return (
-        <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 my-4 overflow-hidden">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4 overflow-hidden">
           <div className={`${hasLongLines ? "overflow-x-auto" : ""}`}>
             <div className={`${hasLongLines ? "min-w-max" : ""}`}>
               {lines.map((line, i) => {
@@ -56,10 +56,10 @@ const components: any = {
                   return (
                     <div
                       key={i}
-                      className="flex items-start gap-2 mb-2 text-red-500 dark:text-red-400"
+                      className="flex items-start gap-2 mb-2 text-red-500"
                     >
                       <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <div className="text-gray-700 dark:text-gray-300 font-mono">
+                      <div className="text-gray-700 font-mono">
                         {line.replace("❌", "").trim()}
                       </div>
                     </div>
@@ -68,10 +68,10 @@ const components: any = {
                   return (
                     <div
                       key={i}
-                      className="flex items-start gap-2 mb-2 text-green-500 dark:text-green-400"
+                      className="flex items-start gap-2 mb-2 text-green-500"
                     >
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <div className="text-gray-700 dark:text-gray-300 font-mono">
+                      <div className="text-gray-700 font-mono">
                         {line.replace("✅", "").trim()}
                       </div>
                     </div>
@@ -80,7 +80,7 @@ const components: any = {
                   return (
                     <div
                       key={i}
-                      className="text-gray-700 dark:text-gray-300 font-mono whitespace-pre"
+                      className="text-gray-700 font-mono whitespace-pre"
                     >
                       {line}
                     </div>
@@ -96,7 +96,7 @@ const components: any = {
     // For code blocks with language syntax highlighting or regular code blocks
     return (
       <div className="markdown-code-block">
-        <pre className="text-sm text-gray-800 dark:text-gray-200 whitespace-pre">
+        <pre className="text-sm text-gray-800 whitespace-pre">
           <code className={className} {...props} />
         </pre>
       </div>
@@ -111,7 +111,7 @@ const components: any = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   p: (props: any) => (
     <p
-      className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed"
+      className="text-gray-700 mb-4 leading-relaxed"
       {...props}
     />
   ),
@@ -138,7 +138,7 @@ export function GuidelinesContent() {
   const content = language === 'th' ? guidelinesMarkdown.th : guidelinesMarkdown.en;
 
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg max-w-none">
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
     </div>
   );

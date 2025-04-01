@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
-  Lightbulb, 
-  Wand2, 
-  ChevronDown, 
-  BarChart3, 
-  ChevronUp, 
-  ExternalLink
+import {
+  Lightbulb,
+  Wand2,
+  ChevronDown,
+  BarChart3,
+  ChevronUp,
 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
@@ -94,7 +93,7 @@ export default function PromptVisualizer() {
                         {showImproveSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>
-                    
+
                     {showImproveSteps && (
                       <div className="mt-4 space-y-3 text-sm">
                         <div className="p-2 border rounded bg-background">
@@ -135,15 +134,6 @@ export default function PromptVisualizer() {
                   <li>• {t('optimizedPromptTemplate')}</li>
                   <li>• {t('responseProcessing')}</li>
                 </ul>
-                <div className="mt-3">
-                  <a href="https://github.com/typhoon-ai/typhoon-prompt-optimizer" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-sm text-primary flex items-center gap-1 hover:underline">
-                    <ExternalLink size={14} />
-                    {t('viewSourceCode')}
-                  </a>
-                </div>
               </div>
             </div>
           ) : (
@@ -188,7 +178,7 @@ export default function PromptVisualizer() {
                         {showGenerateSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>
-                    
+
                     {showGenerateSteps && (
                       <div className="mt-4 space-y-3 text-sm">
                         <div className="p-2 border rounded bg-background">
@@ -229,15 +219,6 @@ export default function PromptVisualizer() {
                   <li>• {t('customizedPromptTemplate')}</li>
                   <li>• {t('responseAnalysis')}</li>
                 </ul>
-                <div className="mt-3">
-                  <a href="https://github.com/typhoon-ai/typhoon-prompt-optimizer" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-sm text-primary flex items-center gap-1 hover:underline">
-                    <ExternalLink size={14} />
-                    {t('viewSourceCode')}
-                  </a>
-                </div>
               </div>
             </div>
           )}
