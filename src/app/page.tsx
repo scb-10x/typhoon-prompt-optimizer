@@ -103,7 +103,7 @@ export default function Home() {
                 className="inline-flex items-center text-primary font-medium hover:underline"
               >
                 <Info className="mr-2 h-4 w-4" />
-                Learn more about Typhoon's capabilities
+                Learn more about Typhoon&apos;s capabilities
               </a>
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function Home() {
             <div className="bg-white/50 rounded-lg p-6 shadow-sm border border-gray-100">
               <h3 className="text-lg font-medium mb-2">How does the Prompt Optimizer work?</h3>
               <p className="text-gray-600">
-                The Prompt Optimizer uses Typhoon's advanced AI algorithms to analyze your task or existing prompt,
+                The Prompt Optimizer uses Typhoon&apos;s advanced AI algorithms to analyze your task or existing prompt,
                 then generates an optimized version designed to produce better results from LLM systems.
               </p>
             </div>

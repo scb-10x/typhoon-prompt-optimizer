@@ -61,7 +61,7 @@ export default function PromptVisualizer() {
               </div>
 
               <div className="text-gray-600 mb-4">
-                <p>Typhoon's prompt improvement process analyzes your existing prompts and enhances them for better AI responses. This demonstrates the advanced natural language understanding capabilities that Typhoon offers to developers and users.</p>
+                <p>Typhoon&apos;s prompt improvement process analyzes your existing prompts and enhances them for better AI responses. This demonstrates the advanced natural language understanding capabilities that Typhoon offers to developers and users.</p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
@@ -150,7 +150,7 @@ export default function PromptVisualizer() {
               </div>
 
               <div className="text-gray-600 mb-4">
-                <p>Typhoon's prompt generation algorithm creates effective prompts from simple task descriptions. This demonstrates how Typhoon's capabilities can be leveraged to enhance productivity in AI workflows and create better results from large language models.</p>
+                <p>Typhoon&apos;s prompt generation algorithm creates effective prompts from simple task descriptions. This demonstrates how Typhoon&apos;s capabilities can be leveraged to enhance productivity in AI workflows and create better results from large language models.</p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
