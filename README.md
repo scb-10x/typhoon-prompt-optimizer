@@ -1,15 +1,24 @@
 # Typhoon Prompt Optimizer
 
-A modern web application for optimizing prompts for Large Language Models (LLMs). This tool helps you generate effective prompts from task descriptions and improve existing prompts for better AI interactions.
+## Introduction
 
-## Features
+[Typhoon Prompt Optimizer](https://optimizer.apps.opentyphoon.ai) is a web application designed to help users create and refine prompts for Large Language Models (LLMs). It transforms task descriptions into effective prompts and enhances existing prompts to generate better AI responses.
 
-- **Generate Prompts**: Convert task descriptions into optimized prompts for LLMs
-- **Improve Prompts**: Enhance existing prompts for better results
-- **Modern UI**: Clean, responsive interface with dark mode support
-- **Powered by AI**: Uses Typhoon Reasoning Model to generate and improve prompts
+This project is part of [Typhoon Application Week](https://apps.opentyphoon.ai), showcasing the capabilities of the [Typhoon platform](https://opentyphoon.ai). Please note that this application is not maintained for production use and is not production-ready. Use at your own risk.
 
-## Getting Started
+## Highlighted Features + Typhoon Integration
+
+- **Smart Prompt Generation**: Typhoon's reasoning model analyzes task descriptions to create optimized prompts tailored to specific LLM requirements, ensuring clear instructions and proper context.
+
+- **Prompt Enhancement**: Existing prompts are refined by Typhoon, which identifies weaknesses, ambiguities, or potential improvements to make the prompt more effective.
+
+- **Context-Aware Suggestions**: Typhoon provides specific suggestions based on the prompt's purpose, adapting its recommendations to different types of tasks (creative writing, coding, data analysis, etc.).
+
+- **Best Practice Implementation**: Prompts are automatically structured following industry best practices for prompt engineering, powered by Typhoon's knowledge of effective prompt patterns.
+
+- **Interactive Refinement**: The application leverages Typhoon's capabilities to provide real-time feedback as users modify prompts, creating an iterative improvement process.
+
+## Getting Started (Local Development)
 
 ### Prerequisites
 
@@ -21,62 +30,35 @@ A modern web application for optimizing prompts for Large Language Models (LLMs)
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/scb-10x/typhoon-prompt-optimizer.git
+   git clone https://github.com/yourusername/typhoon-prompt-optimizer.git
    cd typhoon-prompt-optimizer
    ```
 
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-3. Create a `.env.local` file in the root directory and add your OpenAI API key:
+3. Create a `.env.local` file in the root directory and add your Typhoon API key:
    ```
-   TYPHOON_API_KEY=your_openai_api_key_here
+   TYPHOON_API_KEY=your_typhoon_api_key_here
    ```
 
 4. Start the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Usage
-
-### Generating a Prompt
-
-1. Navigate to the "Generate Prompt" tab
-2. Enter a detailed task description in the text area
-3. Click the "Generate Prompt" button
-4. Copy the generated prompt using the "Copy" button
-
-### Improving an Existing Prompt
-
-1. Navigate to the "Improve Prompt" tab
-2. Paste your existing prompt in the text area
-3. Click the "Improve Prompt" button
-4. Copy the improved prompt using the "Copy" button
-
-## Technologies Used
-
-- Next.js 15
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Typhoon API
-
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the LICENSE file for details.
 
-## Acknowledgments
+## Connect With Us
 
-- Typhoon for providing the API
-- Vercel for hosting
-- Next.js team for the amazing framework
+- Website: [Typhoon](https://opentyphoon.ai)
+- GitHub: [SCB 10X](https://github.com/scb-10x)
+- Hugging Face: [SCB 10X](https://huggingface.co/scb10x)
+- Discord: [Join our community](https://discord.com/invite/9F6nrFXyNt)
+- X (formerly Twitter): [Typhoon](https://x.com/opentyphoon)
