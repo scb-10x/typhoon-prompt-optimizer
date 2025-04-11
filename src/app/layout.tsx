@@ -70,7 +70,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://prompts.opentyphoon.ai" />
         <meta name="robots" content="index, follow" />
-        <Script>
+        <Script id="gtm-script">
           {`
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
