@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
-  Lightbulb, 
-  Wand2, 
-  ChevronDown, 
-  BarChart3, 
-  ChevronUp, 
-  ExternalLink
+import {
+  Lightbulb,
+  Wand2,
+  ChevronDown,
+  BarChart3,
+  ChevronUp,
 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
@@ -61,6 +60,10 @@ export default function PromptVisualizer() {
                 <h3 className="text-xl font-semibold">{t('improvePromptAlgorithm')}</h3>
               </div>
 
+              <div className="text-gray-600 mb-4">
+                <p>Typhoon&apos;s prompt improvement process analyzes your existing prompts and enhances them for better AI responses. This demonstrates the advanced natural language understanding capabilities that Typhoon offers to developers and users.</p>
+              </div>
+
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-1 space-y-4">
                   <div className="rounded-xl border bg-card p-4 shadow-sm">
@@ -94,7 +97,7 @@ export default function PromptVisualizer() {
                         {showImproveSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>
-                    
+
                     {showImproveSteps && (
                       <div className="mt-4 space-y-3 text-sm">
                         <div className="p-2 border rounded bg-background">
@@ -135,15 +138,6 @@ export default function PromptVisualizer() {
                   <li>• {t('optimizedPromptTemplate')}</li>
                   <li>• {t('responseProcessing')}</li>
                 </ul>
-                <div className="mt-3">
-                  <a href="https://github.com/typhoon-ai/typhoon-prompt-optimizer" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-sm text-primary flex items-center gap-1 hover:underline">
-                    <ExternalLink size={14} />
-                    {t('viewSourceCode')}
-                  </a>
-                </div>
               </div>
             </div>
           ) : (
@@ -153,6 +147,10 @@ export default function PromptVisualizer() {
                   <Lightbulb size={20} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold">{t('generatePromptAlgorithm')}</h3>
+              </div>
+
+              <div className="text-gray-600 mb-4">
+                <p>Typhoon&apos;s prompt generation algorithm creates effective prompts from simple task descriptions. This demonstrates how Typhoon&apos;s capabilities can be leveraged to enhance productivity in AI workflows and create better results from large language models.</p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
@@ -188,7 +186,7 @@ export default function PromptVisualizer() {
                         {showGenerateSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>
-                    
+
                     {showGenerateSteps && (
                       <div className="mt-4 space-y-3 text-sm">
                         <div className="p-2 border rounded bg-background">
@@ -229,15 +227,6 @@ export default function PromptVisualizer() {
                   <li>• {t('customizedPromptTemplate')}</li>
                   <li>• {t('responseAnalysis')}</li>
                 </ul>
-                <div className="mt-3">
-                  <a href="https://github.com/typhoon-ai/typhoon-prompt-optimizer" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-sm text-primary flex items-center gap-1 hover:underline">
-                    <ExternalLink size={14} />
-                    {t('viewSourceCode')}
-                  </a>
-                </div>
               </div>
             </div>
           )}
