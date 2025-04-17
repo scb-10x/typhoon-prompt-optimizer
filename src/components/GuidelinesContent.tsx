@@ -2,7 +2,7 @@
 
 import ReactMarkdown from "react-markdown";
 import { CheckCircle, XCircle } from "lucide-react";
-import { guidelinesMarkdown } from "./guidelines/content";
+import { guidelinesMarkdown } from "../guidelines/content";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Custom components for markdown rendering

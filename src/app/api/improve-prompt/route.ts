@@ -48,7 +48,9 @@ ${prompt}
 
 6. Ensure that your improved prompt is comprehensive and self-contained, allowing the LLM to understand and execute the task without requiring additional context or information.
 
-7. Write your improved prompt inside <prompt> tags.
+7. Seperate the input {{VARIABLE_NAME}} for the prompt clearly from the example and the input must follow the examples.
+
+8. Write your improved prompt inside <prompt> tags.
 
 Remember, your goal is to create a prompt that will result in the most accurate and effective response from the LLM. Focus on clarity, specificity, and comprehensiveness in your improved version.
 <prompt>`

@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { extractResultFromThinking } from '@/lib/utils';
 import { TYPHOON_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
-
 // Initialize OpenAI client with Typhoon API endpoint
 const openai = new OpenAI({
   apiKey: TYPHOON_API_KEY,
@@ -33,7 +32,6 @@ ${taskDescription}
 </task_description>
 
 To create an effective prompt, follow these guidelines:
-
 1. Analyze the task description carefully to understand the core requirements and objectives.
 2. Break down the task into clear, sequential steps if applicable.
 3. Identify any potential ambiguities or edge cases and address them in your prompt.
@@ -41,6 +39,7 @@ To create an effective prompt, follow these guidelines:
 5. Include any relevant context or background information that may be helpful for the language model.
 6. Specify the desired output format and any constraints or requirements.
 7. If appropriate, provide a brief example of the expected input and output.
+8. Seperate the {{VARIABLE_NAME}} for the prompt clearly in itself own section to make user easy to replace later.
 
 Your generated prompt should be structured in a way that guides the language model through the task logically and effectively. Consider using numbered steps, bullet points, or other organizational elements to enhance clarity.
 
@@ -53,7 +52,7 @@ Now, based on the task description provided, generate an effective prompt for a 
 <prompt>Remember to focus on the specific details of the task described above and tailor your prompt generation accordingly. Your goal is to create a prompt that will enable the LLM to complete the given task with high accuracy and reliability.`
         }
       ],
-      temperature: 0.6,
+      temperature: 0.1,
       max_tokens: 2048,
     });
 
