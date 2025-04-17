@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { extractResultFromThinking } from '@/lib/utils';
 import { TYPHOON_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
-import { guidelinesMarkdown } from '@/guidelines/content';
 
 // Initialize OpenAI client with Typhoon API endpoint
 const openai = new OpenAI({
@@ -34,7 +33,24 @@ export async function POST(request: Request) {
 <current_prompt>
 ${prompt}
 </current_prompt>
-${guidelinesMarkdown['en']}
+
+3. Based on your analysis, create an improved version of the prompt. Your improved prompt should:
+   a. Be clear and concise
+   b. Provide specific instructions and guidelines
+   c. Anticipate potential misunderstandings or misinterpretations
+   d. Include examples if necessary to illustrate the expected output
+   e. Specify any constraints or limitations
+   f. Address any ambiguities present in the original prompt
+
+4. Your output should be the full, improved prompt. Do not include any explanations, justifications, or additional text outside of the prompt itself.
+
+5. Format your improved prompt using appropriate spacing, line breaks, and paragraphs to enhance readability.
+
+6. Ensure that your improved prompt is comprehensive and self-contained, allowing the LLM to understand and execute the task without requiring additional context or information.
+
+7. Seperate the input {{VARIABLE_NAME}} for the prompt clearly from the example and the input must follow the examples.
+
+8. Write your improved prompt inside <prompt> tags.
 
 Remember, your goal is to create a prompt that will result in the most accurate and effective response from the LLM. Focus on clarity, specificity, and comprehensiveness in your improved version.
 <prompt>`
