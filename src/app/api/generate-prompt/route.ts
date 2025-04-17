@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { extractResultFromThinking } from '@/lib/utils';
 import { TYPHOON_API_KEY, TYPHOON_BASE_URL, TYPHOON_MODEL } from '@/app/const';
-
+import { guidelinesMarkdown } from '@/guidelines/content';
 // Initialize OpenAI client with Typhoon API endpoint
 const openai = new OpenAI({
   apiKey: TYPHOON_API_KEY,
@@ -33,24 +33,12 @@ ${taskDescription}
 </task_description>
 
 To create an effective prompt, follow these guidelines:
-
-1. Analyze the task description carefully to understand the core requirements and objectives.
-2. Break down the task into clear, sequential steps if applicable.
-3. Identify any potential ambiguities or edge cases and address them in your prompt.
-4. Use clear and concise language, avoiding unnecessary complexity.
-5. Include any relevant context or background information that may be helpful for the language model.
-6. Specify the desired output format and any constraints or requirements.
-7. If appropriate, provide a brief example of the expected input and output.
-
-Your generated prompt should be structured in a way that guides the language model through the task logically and effectively. Consider using numbered steps, bullet points, or other organizational elements to enhance clarity.
-
+${guidelinesMarkdown['en']}
 Remember to include any necessary input variables in the format {{VARIABLE_NAME}} within your prompt. These will be replaced with actual values when the prompt is used.
 
 Output your generated prompt within <prompt> tags. Do not include any explanations, comments, or additional text outside of these tags. The content within the <prompt> tags should be ready to use as-is with a language model.
-
 Now, based on the task description provided, generate an effective prompt for a language model:
-
-<prompt>Remember to focus on the specific details of the task described above and tailor your prompt generation accordingly. Your goal is to create a prompt that will enable the LLM to complete the given task with high accuracy and reliability.`
+<prompt>`
         }
       ],
       temperature: 0.6,
