@@ -16,22 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://prompts.opentyphoon.ai"),
+  metadataBase: new URL("https://optimizer.apps.opentyphoon.ai"),
   title: "Typhoon Prompt Optimizer - Craft Better AI Prompts | OpenTyphoon",
   description: "Improve your AI interactions with Typhoon's powerful prompt generation and optimization tools. A demo showcasing what's possible with Typhoon LLM technology.",
   keywords: ["AI prompts", "prompt engineering", "Typhoon AI", "LLM tools", "AI prompt generator", "prompt optimization"],
-  authors: [{ name: "OpenTyphoon Team" }],
-  creator: "OpenTyphoon",
-  publisher: "OpenTyphoon",
+  authors: [{ name: "Typhoon Team" }],
+  creator: "Typhoon",
+  publisher: "Typhoon",
   openGraph: {
     type: "website",
-    url: "https://prompts.opentyphoon.ai",
+    url: "https://optimizer.apps.opentyphoon.ai",
     title: "Typhoon Prompt Optimizer - Craft Better AI Prompts",
     description: "Enhance your AI interactions with advanced prompt engineering tools. A demo showcasing Typhoon's capabilities.",
     siteName: "Typhoon Prompt Optimizer",
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/og.jpg",
         width: 1200,
         height: 630,
         alt: "Typhoon Prompt Optimizer",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     creator: "@opentyphoon",
     title: "Typhoon Prompt Optimizer - AI Prompt Engineering Tools",
     description: "Generate and optimize prompts for AI models with Typhoon's demonstration tools.",
-    images: ["/twitter-image.png"],
+    images: ["/images/og.jpg"],
   },
   alternates: {
-    canonical: "https://prompts.opentyphoon.ai",
+    canonical: "https://optimizer.apps.opentyphoon.ai",
   },
   icons: {
     icon: [
@@ -68,7 +68,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href="https://prompts.opentyphoon.ai" />
+        <link rel="canonical" href="https://optimizer.apps.opentyphoon.ai" />
         <meta name="robots" content="index, follow" />
         <Script id="gtm-script">
           {`
@@ -95,7 +95,7 @@ export default function RootLayout({
               "@type": "WebApplication",
               "name": "Typhoon Prompt Optimizer",
               "description": "A tool for generating and optimizing prompts for AI models, showcasing Typhoon's capabilities.",
-              "url": "https://prompts.opentyphoon.ai",
+              "url": "https://optimizer.apps.opentyphoon.ai",
               "applicationCategory": "AITools",
               "offers": {
                 "@type": "Offer",
