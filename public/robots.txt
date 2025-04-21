@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://prompts.opentyphoon.ai/sitemap.xml 
+Sitemap: https://optimizer.apps.opentyphoon.ai/sitemap.xml 
