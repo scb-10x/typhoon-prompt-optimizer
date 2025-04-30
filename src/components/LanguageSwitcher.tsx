@@ -23,11 +23,12 @@ export default function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
+        <Button
+          variant="ghost"
+          size="sm"
           className="flex items-center gap-1.5 text-xs font-medium rounded-lg"
           aria-label={t('languageSwitcher')}
+          id="language-switcher-button"
         >
           <Globe size={14} />
           <span className="hidden sm:inline">{language === 'en' ? 'English' : 'ไทย'}</span>
@@ -40,6 +41,7 @@ export default function LanguageSwitcher() {
             key={lang.value}
             className={`flex items-center gap-2 ${language === lang.value ? 'font-medium bg-accent/30' : ''}`}
             onClick={() => changeLanguage(lang.value)}
+            id={`language-option-${lang.value}`}
           >
             <span>{lang.flag}</span>
             <span>{lang.label}</span>

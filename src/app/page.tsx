@@ -55,23 +55,23 @@ export default function Home() {
           <div className="card-stripe relative p-8 sm:p-10">
             <Tabs defaultValue="generate" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-10 p-1 gap-1">
-                <TabsTrigger value="generate" className="text-large py-3 group">
+                <TabsTrigger value="generate" className="text-large py-3 group" id="generate-tab-trigger">
                   <span className="flex items-center gap-2">
                     <Lightbulb className="h-4 w-4 group-data-[state=active]:text-primary" />
                     {t('generatePrompt')}
                   </span>
                 </TabsTrigger>
-                <TabsTrigger value="improve" className="text-large py-3 group">
+                <TabsTrigger value="improve" className="text-large py-3 group" id="improve-tab-trigger">
                   <span className="flex items-center gap-2">
                     <Sparkles className="h-4 w-4 group-data-[state=active]:text-primary" />
                     {t('improvePrompt')}
                   </span>
                 </TabsTrigger>
               </TabsList>
-              <TabsContent value="generate" className="pt-2">
+              <TabsContent value="generate" className="pt-2" id="generate-tab-content">
                 <PromptGenerator />
               </TabsContent>
-              <TabsContent value="improve" className="pt-2">
+              <TabsContent value="improve" className="pt-2" id="improve-tab-content">
                 <PromptImprover />
               </TabsContent>
             </Tabs>
@@ -87,7 +87,7 @@ export default function Home() {
         </section>
 
         {/* About Typhoon Section */}
-        <section className="max-w-4xl mx-auto mt-20 bg-white/50 p-6 rounded-xl shadow-sm border border-gray-100">
+        <section className="max-w-4xl mx-auto mt-20 bg-white/50 p-6 rounded-xl shadow-sm border border-gray-100" id="about-typhoon-section">
           <h2 className="text-2xl font-bold mb-4">About Typhoon LLM</h2>
           <div className="prose prose-slate max-w-none">
             <p>
@@ -101,6 +101,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-primary font-medium hover:underline"
+                id="learn-more-link"
               >
                 <Info className="mr-2 h-4 w-4" />
                 Learn more about Typhoon&apos;s capabilities
@@ -110,12 +111,12 @@ export default function Home() {
         </section>
 
         {/* Visualization Section */}
-        <section aria-labelledby="visualization-section" className="relative max-w-4xl mx-auto mt-20">
+        <section aria-labelledby="visualization-section" className="relative max-w-4xl mx-auto mt-20" id="visualization-section">
           <PromptVisualizer />
         </section>
 
         {/* FAQ Section */}
-        <section className="max-w-4xl mx-auto mt-20">
+        <section className="max-w-4xl mx-auto mt-20" id="faq-section">
           <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div className="bg-white/50 rounded-lg p-6 shadow-sm border border-gray-100">
@@ -153,6 +154,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-purple-600 hover:text-purple-700 font-semibold transition-colors"
+                  id="built-with-typhoon-link"
                 >
                   #BuiltWithTyphoon
                 </a>
@@ -162,6 +164,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-700 transition-colors"
+                  id="terms-conditions-link"
                 >
                   Terms and Conditions
                 </a>
@@ -175,6 +178,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label="GitHub"
+                  id="social-github-link"
                 >
                   <FaGithub className="h-5 w-5" />
                 </a>
@@ -184,6 +188,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label="Discord"
+                  id="social-discord-link"
                 >
                   <FaDiscord className="h-5 w-5" />
                 </a>
@@ -193,6 +198,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label="Hugging Face"
+                  id="social-huggingface-link"
                 >
                   <SiHuggingface className="h-5 w-5" />
                 </a>
@@ -202,6 +208,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label="X (formerly Twitter)"
+                  id="social-twitter-link"
                 >
                   <FaXTwitter className="h-5 w-5" />
                 </a>

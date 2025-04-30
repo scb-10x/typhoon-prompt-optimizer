@@ -29,6 +29,7 @@ export default function PromptVisualizer() {
             variant={activeTab === 'improve' ? "default" : "outline"}
             onClick={() => setActiveTab('improve')}
             className={`rounded-lg ${activeTab === 'improve' ? "text-white" : ""}`}
+            id="visualizer-improve-tab"
           >
             <div className="flex items-center gap-2">
               <Wand2 size={16} />
@@ -39,6 +40,7 @@ export default function PromptVisualizer() {
             variant={activeTab === 'generate' ? "default" : "outline"}
             onClick={() => setActiveTab('generate')}
             className={`rounded-lg ${activeTab === 'generate' ? "text-white" : ""}`}
+            id="visualizer-generate-tab"
           >
             <div className="flex items-center gap-2">
               <Lightbulb size={16} />
@@ -88,12 +90,12 @@ export default function PromptVisualizer() {
 
                 <div className="flex-1">
                   <div className="border rounded-xl p-4 bg-muted/30">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={toggleImproveSteps}>
+                    <div className="flex items-center justify-between cursor-pointer" onClick={toggleImproveSteps} id="improve-steps-toggle">
                       <h4 className="font-medium flex items-center gap-2">
                         <BarChart3 size={16} className="text-primary" />
                         {t('detailedSteps')}
                       </h4>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" id="improve-steps-toggle-button">
                         {showImproveSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>
@@ -177,12 +179,12 @@ export default function PromptVisualizer() {
 
                 <div className="flex-1">
                   <div className="border rounded-xl p-4 bg-muted/30">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={toggleGenerateSteps}>
+                    <div className="flex items-center justify-between cursor-pointer" onClick={toggleGenerateSteps} id="generate-steps-toggle">
                       <h4 className="font-medium flex items-center gap-2">
                         <BarChart3 size={16} className="text-primary" />
                         {t('detailedSteps')}
                       </h4>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" id="generate-steps-toggle-button">
                         {showGenerateSteps ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                       </Button>
                     </div>

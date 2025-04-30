@@ -1,26 +1,44 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { Home, Book, Menu, X } from 'lucide-react';
+import { Home, Book, Menu, X, Github } from 'lucide-react';
 
 export function Navbar() {
   const { t } = useLanguage();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showGithubButton, setShowGithubButton] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  useEffect(() => {
+    const releaseDate = new Date('2025-05-08T17:00:01Z');
+
+    const checkDate = () => {
+      const currentDate = new Date();
+      setShowGithubButton(currentDate >= releaseDate);
+    };
+
+    // Check immediately
+    checkDate();
+
+    // Set up interval to check periodically
+    const interval = setInterval(checkDate, 60000); // Check every minute
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 py-4 border-b border-gray-200 shadow-sm">
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="Typhoon Prompt Optimizer Homepage">
+        <Link href="/" className="flex items-center gap-2" aria-label="Typhoon Prompt Optimizer Homepage" id="nav-logo-link">
           <div className="relative w-8 h-8">
             <Image
               src="/images/logo.svg"
@@ -42,6 +60,7 @@ export function Navbar() {
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
+            id="nav-mobile-menu-toggle"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -54,6 +73,7 @@ export function Navbar() {
                 : 'text-gray-600 hover:text-primary'
                 }`}
               aria-current={pathname === '/' ? 'page' : undefined}
+              id="nav-home-link"
             >
               <Home className="w-4 h-4" aria-hidden="true" />
               {t('home')}
@@ -65,10 +85,23 @@ export function Navbar() {
                 : 'text-gray-600 hover:text-primary'
                 }`}
               aria-current={pathname === '/guidelines' ? 'page' : undefined}
+              id="nav-guidelines-link"
             >
               <Book className="w-4 h-4" aria-hidden="true" />
               {t('guidelines')}
             </Link>
+            {showGithubButton && (
+              <a
+                href="https://github.com/scb-10x/typhoon-prompt-optimizer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors flex items-center gap-1.5 text-gray-600 hover:text-primary"
+                id="nav-github-link"
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
+                Source
+              </a>
+            )}
           </nav>
           <LanguageSwitcher />
         </div>
@@ -90,6 +123,7 @@ export function Navbar() {
                 }`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={pathname === '/' ? 'page' : undefined}
+              id="mobile-nav-home-link"
             >
               <Home className="w-4 h-4" aria-hidden="true" />
               {t('home')}
@@ -102,10 +136,24 @@ export function Navbar() {
                 }`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={pathname === '/guidelines' ? 'page' : undefined}
+              id="mobile-nav-guidelines-link"
             >
               <Book className="w-4 h-4" aria-hidden="true" />
               {t('guidelines')}
             </Link>
+            {showGithubButton && (
+              <a
+                href="https://github.com/scb-10x/typhoon-prompt-optimizer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 px-3 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 text-gray-600 hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+                id="mobile-nav-github-link"
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
+                Source
+              </a>
+            )}
           </nav>
         </div>
       )}

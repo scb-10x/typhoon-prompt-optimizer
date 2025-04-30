@@ -80,6 +80,7 @@ export default function PromptGenerator() {
               variant="default"
               showShine={false}
               className="px-6 py-3 h-auto text-white font-medium rounded-xl transition-all shadow-md hover:shadow-lg hover:translate-y-[-1px]"
+              id="generate-prompt-button"
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
@@ -116,6 +117,7 @@ export default function PromptGenerator() {
                 size="sm"
                 onClick={handleCopy}
                 className="rounded-lg flex items-center gap-1.5 transition-all"
+                id="copy-generated-prompt-button"
               >
                 {copied ? (
                   <span>{t('copied')}</span>
@@ -128,7 +130,7 @@ export default function PromptGenerator() {
               </Button>
             </div>
 
-            <div className="p-4 rounded-lg bg-muted/50 border">
+            <div className="p-4 rounded-lg bg-muted/50 border" id="generated-prompt-result">
               <pre className="whitespace-pre-wrap text-sm">{generatedPrompt}</pre>
             </div>
 
