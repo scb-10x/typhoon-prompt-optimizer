@@ -1,5 +1,10 @@
 # Typhoon Prompt Optimizer
 
+**This repository is archived and released as-is. If you’re interested in this work, please contact us.**
+
+---
+
+
 ## Introduction
 
 [Typhoon Prompt Optimizer](https://optimizer.apps.opentyphoon.ai) is a web application designed to help users create and refine prompts for Large Language Models (LLMs). It transforms task descriptions into effective prompts and enhances existing prompts to generate better AI responses.
